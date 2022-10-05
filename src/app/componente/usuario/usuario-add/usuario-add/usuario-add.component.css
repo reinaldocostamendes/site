@@ -1,0 +1,19 @@
+.btn{
+	height: 28px;
+	padding: 1px;
+	margin-left: 5px;
+}
+.form-group{
+    display: inline-table;
+    margin:10px;
+}
+.calndr{
+	float: left;
+}
+.form-group  #dataNascimento{
+	float: left;
+	border: 1px solid #fff;
+}
+.form-group .input-group-append{
+	float: left;
+}

@@ -1,0 +1,12 @@
+table tbody tr, table thead  th, table tbody tr td{
+	height: 28px;
+	padding: 2px;
+}
+.btn{
+	height: 28px;
+	padding: 1px;
+	margin-left: 5px;
+}
+#usuario{
+	margin-top:40px;
+}

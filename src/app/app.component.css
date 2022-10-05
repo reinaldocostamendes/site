@@ -1,0 +1,77 @@
+form {
+  width: 400px;
+  max-width: 100%;
+  border: 2px solid #CCC;
+  padding: 20px;
+  display: inline-table;
+  text-align: left;
+}
+
+.frm {
+  text-align: center;
+}
+
+form label {
+  font-weight: bolder;
+}
+
+form h4 {
+  width: 100%;
+  padding: 8px;
+  background: #CCC;
+}
+
+#page-content-wrapper {
+  position: fixed;
+  opacity: 1000000000000;
+  width: 100%;
+  margin-bottom: 125px;
+  height: auto;
+  color: #fff;
+  background-image: url("/../assets/images/anim_home.gif");
+  background-size: 100%;
+  /*background-size: cover; */
+  text-align: center;
+  display: inline-table;
+}
+
+#page-content-wrapper .menus {
+  width: 100%;
+  padding: 8px;
+  height: auto;
+  display: inline-table;
+}
+
+#page-content-wrapper .menus a {
+  width: 120px;
+  padding: 5px;
+  margin: 10px;
+  display: inline-table;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  background: #084B8A;
+  opacity: 0.65;
+  color: #fff;
+  font-weight: bolder;
+}
+
+section {
+  margin-top: 70px;
+  display: inline-table;
+  width: 100%;
+}
+@media(max-width: 700px){
+#page-content-wrapper .menus a {
+  width: 67px;
+  padding: 2px;
+  margin: 4px;
+  display: inline-table;
+  border: 2px solid #ccc;
+  border-radius: 28px;
+  background: #084B8A;
+  opacity: 0.65;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 10px;
+}
+}

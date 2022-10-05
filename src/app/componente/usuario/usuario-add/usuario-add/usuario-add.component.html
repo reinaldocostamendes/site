@@ -1,0 +1,122 @@
+<div class="container">
+	<h4>Usuario:</h4>
+
+	<form #formValidate="ngForm">
+		<div class="form-row col-12">
+			<div class="form-group col-md-3">
+				<label for="id">Id</label>
+				<input type="text" class="form-control" [(ngModel)]="usuario.id" id="id" name="id" placeholder="Id"
+					readonly="true" autocomplete="false">
+			</div>
+			<div class="form-group col-md-4">
+				<label for="nome">Nome</label>
+				<span *ngIf="nomeValidate.invalid">*</span>
+				<input type="text" class="form-control" #nomeValidate="ngModel" [(ngModel)]="usuario.nome" id="nome"
+					name="nome" placeholder="Nome" required="true" autocomplete="false">
+			</div>
+			<div class="form-group col-md-4">
+				<label for="cpf">Cpf</label>
+				<span *ngIf="cpfValidate.invalid">*</span>
+				<input type="text" mask="000.000.000.00" class="form-control" #cpfValidate="ngModel" [(ngModel)]="usuario.cpf" id="cpf"
+					name="cpf" placeholder="Cpf" required="true" autocomplete="false">
+			</div>
+
+		</div>
+
+		<div class="form-row">
+
+			<div class="form-group col-md-3">
+				<label for="login">Login</label>
+				<span *ngIf="loginValidate.invalid">*</span>
+				<input type="text" class="form-control" #loginValidate="ngModel" [(ngModel)]="usuario.login" id="login"
+					name="login" placeholder="Login" required="true" autocomplete="false">
+			</div>
+			<div class="form-group col-md-3">
+				<label for="senha">Senha</label>
+				<span *ngIf="senhaValidate.invalid">*</span>
+				<input type="password" class="form-control" #senhaValidate="ngModel" [(ngModel)]="usuario.senha"
+					id="senha" name="senha" placeholder="password" required="true" autocomplete="false">
+			</div>
+
+			<div class="form-group col-md-2">
+				<label for="cep">Cep</label>
+				<span *ngIf="cepValidate.invalid">*</span>
+				<input type="text" class="form-control" #cepValidate="ngModel" [(ngModel)]="usuario.cep" id="cep"
+					name="cep" placeholder="cep" required="true" autocomplete="false">
+			</div>
+			
+			<div class="form-group col-md-3">
+				<label for="dataNascimento">Data Nasc.</label>
+				
+				<div class="calndr form-control">
+				<input  type="text"  [(ngModel)]="usuario.dataNascimento" id="dataNascimento"
+					name="dataNascimento" placeholder="dd/mm/yyyy" required="true" ngbDatepicker #dataNascimento="ngbDatepicker">
+					<div class="input-group-append">
+						<button class="btn btn-primary" (click)="dataNascimento.toggle()" type="button">********</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-row">
+		<div class="form-group col-md-3">
+			<label for="profissao">Profissão</label>
+		
+		<select [(ngModel)]="usuario.profissao.id" id="profissao" name="profissao"  class="form-control" required="true">
+<option [ngValue]="p.id" *ngFor="let p of profissoes">{{p.descricao}}</option>
+		</select>
+		</div>
+
+		<div class="form-group col-md-3">
+			<label for="salario">Salário</label>
+			
+			<input type="text" class="form-control" #salarioValidate="ngModel" [(ngModel)]="usuario.salario" id="salario"
+				name="salario" currencyMask [options]="{prefix: '€',thousands: '.', decimal:','}" placeholder="salario"  autocomplete="false">
+		</div>
+	</div>
+
+		<div class="card text-center">
+			<div class="card-header">
+				Telefone Contato
+			</div>
+			<div class="card-body" style="padding-left: 1px;">
+				<div class="form-row">
+					<div class="form-group col-md-3">
+						<input type="text" mask="(00) 000 000 000 000" class="form-control"
+							[(ngModel)]="telefone.numero" id="numero" name="numero">
+					</div>
+
+					<div class="form-group col-md-2">
+						<button class="btn btn-primary" (click)="addFone()">Adicionar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<table class="table">
+
+			<tbody>
+
+				<tr *ngFor="let fone of usuario.telefones; let i = index">
+					<td>{{fone.id}}</td>
+					<td>{{fone.numero | mask : '(00) 000 000 000 000'}}</td>
+					<td><button class="btn btn-danger" (click)="deletarTelefone(fone.id, i)">Delete</button></td>-
+				</tr>
+			</tbody>
+		</table>
+
+
+		<div class="form-row">
+			<div class="col-md-6 mb-3">
+				<button class="btn btn-primary ml-3" type="button" [routerLink]="['/userList']">Voltar</button>
+				<button class="btn btn-info ml-3" type="button" (click)="novo()">Novo</button>
+				<button class="btn btn-success ml-3" type="button" (click)="salvarUser()"
+					[disabled]="formValidate.invalid">Salvar</button>
+			</div>
+
+		</div>
+	</form>
+
+	
+
+</div>

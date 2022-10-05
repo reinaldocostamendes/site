@@ -1,0 +1,49 @@
+form{
+	width: 400px;
+	max-width: 100%;
+	border:2px solid #CCC;
+	padding: 20px;
+	display: inline-table;
+	text-align: left;
+}
+.frm{
+	text-align: center;
+}
+form label{
+	font-weight: bolder;
+}
+form h4{
+	width: 100%;
+	padding: 8px;
+	background: #CCC;
+}
+#sect1 h3{
+	background:#084B8A;
+	background:#0B2F3A;
+	opacity:0.65;
+	color:#fff;
+	padding: 20px;
+	
+	width: auto;
+	max-width: 100%;
+	margin-top: 140px;
+	display: inline-table;
+	border-radius: 6px;
+}
+
+#sect1 {  
+    height: 450px;  
+	color: #fff;
+	background-image: url("/../assets/images/anim_home.gif");  
+    background-size: 100%;  
+	/*background-size: cover; */
+	text-align: center; 
+} 
+@media(max-width: 700px){
+	#sect1 h3{
+		margin-top:10px;
+	}
+	#sect1{
+		height: 200px;
+	}
+}
